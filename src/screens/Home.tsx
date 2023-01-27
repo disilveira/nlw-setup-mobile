@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { Text, View, ScrollView, Alert } from "react-native";
+import { Text, View, ScrollView, Alert, Button } from "react-native";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 
 import { api } from "../lib/axios";
@@ -12,6 +12,7 @@ import { HabitDay, DAY_SIZE } from "../components/HabitDay";
 import { Header } from "../components/Header";
 import { Loading } from "../components/Loading";
 import dayjs from "dayjs";
+import { scheduleNotification } from "../lib/notification";
 
 const datesFromYearStart = generateDates();
 const minimumSummaryDatesSizes = 18 * 7;
@@ -55,6 +56,7 @@ export function Home() {
 
     return (
         <View className="flex-1 bg-background px-8 pt-16">
+            {/*<Button title="Enviar Notificação" onPress={scheduleNotification} />*/}
             <Header />
             <View className="flex-row mt-6 mb-2">
                 {
